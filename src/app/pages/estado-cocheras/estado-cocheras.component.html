@@ -1,0 +1,57 @@
+<app-header></app-header>
+<header>
+  <h2>EASYPARK</h2>
+  <nav id="estado">
+    <a href="">Estado Cocheras</a>
+    <button><img src="/usuario.png" alt="logo usuario" id="logo"></button>
+  </nav>
+  <div id="cerrar">
+    <a [routerLink]="['/login']">Cerrar sesión</a>
+  </div>
+</header>
+
+<main>
+  <div id="tabla">
+    <div id="header-tabla">
+      <div>Nro</div>
+      <div>Disponibilidad</div>
+      <div>Ingreso</div>
+      <div>Acciones</div>
+    </div>
+
+    @for (cochera of filas; track cochera.id) {
+      @if (!cochera.eliminada) {
+        <div>
+          <div>{{ cochera.id }}</div>
+          @if (cochera.activo) {
+            <button (click)="abrirModalCerrarEstacionamiento(cochera.id)">
+              {{ cochera.activo.patente }}
+            </button>
+          } @else if (cochera.deshabilitada) {
+            <div class="disponibilidad ocupada">No Disponible</div>
+          } @else {
+            <button class="disponibilidad disponible" (click)="abrirModalNuevoEstacionamiento(cochera.id)">
+              Disponible
+            </button>
+            <div class="acciones-container">
+              <button (click)="habilitarCochera(cochera.id)">habilitar</button>
+              <button (click)="deshabilitarCochera(cochera.id)">deshabilitar</button>
+              @if (esAdmin) {
+                <button (click)="abrirModalCerrarEstacionamiento(cochera.id)">
+                  <img src="" alt="admin">
+                </button>
+              }
+            </div>
+          }
+        </div>
+      }
+    }
+
+    @if (esAdmin) {
+      <div class="centro">
+        <button (click)="agregarCochera()" class="boton-importante">Agregar cochera</button>
+      </div>
+    }
+  </div>
+</main>
+

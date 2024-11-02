@@ -1,0 +1,27 @@
+<header>
+    <div id="logo">
+        <img src="/public/estacionamiento.jpg" alt="logo">
+    </div>
+    <nav id="opciones">
+        <a [routerLink]="['/estado-cocheras']" routerLinkActive="activo"> ESTADO COCHERAS</a>
+        @if (esAdmin) {
+            <a [routerLink]="['/reportes']" routerLinkActive="activo"> Reportes</a>
+            <a [routerLink]="['/']" routerLinkActive=""> Precios</a>      
+        }
+        <button class="menu">
+            <img src="" alt="aaaaa" id="cerrar">
+            <div class="menu-desplegable">
+                <a (click)="logOut()" id="boton-logout"> Cerrar</a>
+
+            </div>
+
+        </button>
+
+    </nav>
+    
+</header>
+
+<button (click)="abrirModal()">Modal Test</button>
+
+
+

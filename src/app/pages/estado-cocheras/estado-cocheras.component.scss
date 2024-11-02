@@ -1,0 +1,114 @@
+
+@use"./../../../../public/styles/colores.scss";
+
+
+header {
+    margin: 0;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    #estado {
+        display: flex;
+        gap: 15px;
+        align-self: center;
+        font-size: 18px;
+    }
+
+    #logo {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 20px;
+        align-items: center;
+        height: 50px;
+        width: 50px;
+    }
+}
+
+#tabla {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  
+    #header-tabla {
+      font-size: 18px;
+      font-weight: bold;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  
+    div {
+      display: grid;
+      grid-template-columns: 50px 1fr 1fr 1fr;
+      border-bottom: 1px solid #ddd;
+      padding: 10px;
+      align-items: center;
+  
+      &:last-child {
+        border-bottom: none;
+      }
+  
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+        margin-right: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s;
+  
+        &:hover {
+          background-color: #0056b3;
+        }
+  
+        img {
+          width: 16px;
+          height: 16px;
+          margin-right: 5px;
+        }
+      }
+  
+      .btn-eliminar {
+        background-color: #dc3545;
+  
+        &:hover {
+          background-color: #c82333;
+        }
+      }
+    }
+  }
+  
+  .boton-resaltado {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  
+    &:hover {
+      background-color: #218838;
+    }
+  }
+
+  

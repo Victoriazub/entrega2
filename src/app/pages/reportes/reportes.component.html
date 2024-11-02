@@ -1,0 +1,22 @@
+<section id="reportes">
+    <app-header></app-header>
+  
+    <main>
+      <div class="tabla">
+        <div class="tabla-header">
+          <div>Número</div>
+          <div>Mes</div>
+          <div>Ingresos</div>
+          <div>Total Cobrado</div>
+        </div>
+        <div *ngFor="let reporte of listaReportes; let idx = index">
+          <div>{{ reporte.numero }}</div>
+          <div>{{ reporte.mes }}</div>
+          <div>{{ reporte.ingresos }}</div>
+          <div>{{ reporte.totalCobrado }}</div>
+        </div>
+      </div>
+    </main>
+  
+    <div class="footer-padding"></div>
+  </section>

@@ -1,0 +1,19 @@
+<main>
+    <div id="logo-container">
+      <img src="/easypark2.jpg" alt="Logo de EasyPark">
+    </div>
+    <div id="form-container">
+      <form>
+        <input type="text" id="username" placeholder="Usuario" [(ngModel)]="datosLogin.username" name="username">
+        <input type="password" id="password" placeholder="Contraseña" [(ngModel)]="datosLogin.password" name="password">
+        <div class="box-visible">
+          <input type="checkbox" id="visible">
+          <label for="visible">Mostrar contraseña</label>
+        </div>
+        <button type="button" class="boton-resaltado" (click)="login()">Iniciar sesión</button>
+    </form>
+      <a [routerLink]="['/estado-cocheras']">Cocheras</a>
+    </div>
+  </main>
+
+
